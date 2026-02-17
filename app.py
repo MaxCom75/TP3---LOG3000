@@ -1,13 +1,14 @@
 """
-    file: app.py
+    fichier: app.py
 
-    brief:
+    résumé:
 
-    This file defines a Flask web application that provides a simple calculator interface.
-    The application allows users to input a simple arithmetic expression (e.g., "3 + 4") and 
-    computes the result using basic operators: addition, subtraction, multiplication, and division.
+    Ce fichier définit une application web Flask qui fournit une interface de calculatrice simple.
+    L'application permet aux utilisateurs de saisir une expression arithmétique simple 
+    (par exemple, « 3 + 4 ») et calcule le résultat en utilisant les opérateurs de base : addition, 
+    soustraction, multiplication et division.
 
-    authors: Guillaume Laurin, Maxime Comeau and Brian Ly
+    auteurs: Guillaume Laurin, Maxime Comeau and Brian Ly
 
     date: 2026-02-17
 """
@@ -26,15 +27,15 @@ OPS = {
 
 def calculate(expr: str):
     """
-        Parses an expression and computes the result.
+        Analyse une expression et calcule le résultat.
 
-        :param expr(str): A string containing a simple arithmetic expression with two operands and one operator (e.g., "3 + 4").
+        :param expr(str): Une chaîne de caractères contenant une expression arithmétique simple avec deux opérandes et un opérateur (par exemple, « 3 + 4 »).
         
         Returns: 
-            float: The result of the computation
+            float: Le résultat du calcul.
         
         Raises:
-            ValueError: If the expression is invalid or contains non-numeric operands.
+            ValueError: Si l'expression est invalide ou contient des opérandes non numériques.
     """
 
     if not expr or not isinstance(expr, str):
@@ -45,7 +46,7 @@ def calculate(expr: str):
     op_pos = -1
     op_char = None
 
-    # Find the operator in the expression
+    # Trouve l’opérateur dans l’expression
     for i, ch in enumerate(s):
         if ch in OPS:
             if op_pos != -1:
@@ -54,10 +55,10 @@ def calculate(expr: str):
             op_char = ch
 
     if op_pos <= 0 or op_pos >= len(s) - 1:
-        # operator at start/end or not found
+        # opérateur au début/à la fin ou non trouvé
         raise ValueError("invalid expression format")
 
-    # Split the expression into left and right parts
+    # Divise l’expression en parties gauche et droite
     left = s[:op_pos]
     right = s[op_pos+1:]
 
@@ -72,20 +73,21 @@ def calculate(expr: str):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     """ 
-        Handles the main page of the calculator application. It processes user input from a form, 
-        computes the result using the calculate function, and renders the result on the page.
+        Gère la page principale de l'application de calculatrice. Elle traite les saisies de 
+        l'utilisateur à partir d'un formulaire, calcule le résultat en utilisant la fonction 
+        calculate et affiche le résultat sur la page.
     """
 
     result = ""
 
-    # Process form submission
+    # Traite la soumission du formulaire
     if request.method == 'POST':
         expression = request.form.get('display', '')
         try:
             result = calculate(expression)
         except Exception as e:
             result = f"Error: {e}"
-    # Render the index page with the result only if it's a POST request
+    # Affiche la page d’index avec le résultat uniquement s’il s’agit d’une requête POST
     return render_template('index.html', result=result)
 
 if __name__ == '__main__':
