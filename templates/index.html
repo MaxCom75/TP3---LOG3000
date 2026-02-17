@@ -1,3 +1,17 @@
+/*
+   * file: index.html
+   *
+   * brief: 
+   *
+   * This file contains the HTML template for the Flask calculator application. 
+   * It defines the structure and layout of the calculator interface, including 
+   * the display and buttons for digits and operations.
+   * 
+   * authors: Guillaume Laurin, Maxime Comeau and Brian Ly
+   *
+   * date: 2026-02-17
+*/
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,11 +51,19 @@
 </div>
 
 <script>
+   /*
+      @brief Appends a value to the calculator display when a button is clicked.
+
+      @param value The value to append to the display (e.g., a digit or an operator).
+   */
    function appendToDisplay(value) {
       const display = document.getElementById('display');
       display.value += value;
    }
 
+   /*
+      @brief Clears the calculator display.
+   */
    function clearDisplay() {
       document.getElementById('display').value = '';
    }
