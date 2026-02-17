@@ -1,32 +1,29 @@
-TP3--LOG3000
+# TP3--LOG3000
 
 Équipe 18
 
-Objectif:
-Vous avez rejoint une petite équipe de développement dans une startup qui construit une
-application web qui consiste en une calculatrice simple. L’équipe a déjà rédigé un peu de code,
-mais elle n’a pas encore de bonnes pratiques de gestion de versions. Votre gestionnaire a demandé
-à votre équipe de configurer le projet sur GitHub afin de mieux collaborer.
-Au cours des prochaines semaines, différents développeurs corrigeront des bogues et ajouteront
-des fonctionnalités. Pour s’y préparer, vous devez :
-    • Créer et configurer un dépôt GitHub.
-    • Documenter le dépôt et la base de code.
-    • Réaliser des tests et des corrections de bogues au moyen d’un pipeline entièrement
-      documenté.
-Enfin, sachez que la base de code actuelle est désordonnée, mal documentée et contient des bogues
-cachés. Sans surprise, votre patron n’a pas vraiment d’idée de ce qui se passe « sous le capot ». On
-vous donnera seulement une description approximative de ce que chaque composant est censé
-faire. C’est à vous de prendre le relais, d’apporter de la structure au projet et de rendre l’application
-fiable.
+## But
+Le but du projet est de développer une application web qui consiste en une calculatrice simple.
 
-Prérequis d'installation:
-Avant de commencer, assurez-vous d’avoir :
-    • Un compte GitHub.
-    • Git installé localement.
-    • Python et pip installés.
-    • Flask d'installés
+La documentation est utilisée pour structurer le projet. Elle résume les différents modules utilisés dans l'application, elle décrit les grosses lignes de la majorité des fichiers et décrit les comportements attendu de chaque fonction utilisée.
 
-Instruction d'installation:
+## Décomposition du projet
+Le projet est construit avec la biblothèque Flask de python
+
+- **Frontend**
+    - Un fichier HTML qui fournit l'interface utilisateur
+    - Un fichier CSS qui gère le style
+
+- **Backend**
+    - Un fichier Python qui exécute le serveur Flask et gère la logique
+    - Un fichier Python qui contient les functions utilitaites d'opérations
+
+- **Tests**
+    - Quelques fichiers Python qui testent unitairement les différentes functions
+
+## Installation 
+
+### Dépôt Github
 Vous devez cloner ce dépôt Github:
 
     git clone git@github.com:greyli/flask-examples.git
@@ -35,8 +32,52 @@ Ou:
 
     git clone https://github.com/helloflask/flask-examples.git
 
-Vous aller devoir créer un environnement virtuel et installer les dépendances:
+Vous aller devoir vous déplacer dans le répertoire fraichement cloné:
+
+    cd TP3---LOG3000
+
+### Environnement virtuel
+Vous aller devoir créer un environnement virtuel
 
     python3 -m venv venv  # sur Windows, utiliser "python -m venv venv" à la place
     . venv/bin/activate   # sur Windows, utiliser "venv\Scripts\activate" à la place
+
+### Installation des dépendances
     pip install -r requirements.txt
+
+### Exécuter l'application
+Vous aller devoir exécuter la commande suivant
+
+    flask run
+
+### Utilisation
+une fois que l'application est exécuté
+
+### Exécuter les tests
+Vous aller devoir exécuter la commande suivante
+
+    python -m pytest
+
+## Contribution
+Si vous souhaitez contribuer au projet:
+
+Différents préfixe de branche:
+1. feature : Ajoute nouvelle fonctionnalité
+2. fix : Correction de fonctionnalité avec bug
+3. documentation : Ajoute seulement de la documentation
+
+### 1. Créer une branche :
+    git checkout -b feature/ma-nouvelle-fonctionnalité
+
+### 2. Effectuer vos modification et commiter :
+    git add .
+    git commit -m "Ajouter une nouvelle fonctionnalité"
+
+### 3. Soumettre une Pull Request (PR) :
+- Depuis votre branche vers `dev`
+- Décrire clairement les changements et le but de la PR
+- Une PR sans tests unitaires ne sera pas considérée et sera automatiquement rejetée
+
+### 4. Gérer les issues :
+- Créez une issue pour signaler un bug ou proposer une amélioration.
+- Liez votre PR à l'issue correspondante
