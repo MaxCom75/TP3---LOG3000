@@ -1,59 +1,59 @@
 """
-    file: operators.py
+    fichier: operators.py
 
-    brief:
+    résumé:
 
-    This file contains the basic arithmetic operations: addition, subtraction, multiplication, and division.
+    Ce fichier contient les opérations arithmétiques de base : addition, soustraction, multiplication et division.
 
-    authors: Guillaume Laurin, Maxime Comeau and Brian Ly
+    auteurs: Guillaume Laurin, Maxime Comeau and Brian Ly
 
     date: 2026-02-17
 """
 
 def add(a,b):
     """
-    Adds two numbers together.
+    Additionne deux nombres.
 
-    :param a(float): First operand
-    :param b(float): Second operand
+    :param a(float): Première opérande
+    :param b(float): Deuxième opérande
 
     Returns:
-        float: The result of the addition
+        float: Le résultat de l'addition
     """
     return a + b
 
 def subtract(a,b):
     """
-    Subtracts the first number from the second number.
+    Soustrait le premier nombre du second nombre.
     
-    :param a(float): First operand
-    :param b(float): Second operand
+    :param a(float): Première opérande
+    :param b(float): Deuxième opérande
 
     Returns:
-        float: The result of the subtraction
+        float: Le résultat de la soustraction
     """
     return b - a
 
 def multiply(a,b):
     """
-    Multiplies two numbers.
+    Multiplie deux nombres.
     
-    :param a(float): First operand
-    :param b(float): Second operand
+    :param a(float): Première opérande
+    :param b(float): Deuxième opérande
 
     Returns:
-        float: The result of the multiplication
+        float: Le résultat de la multiplication
     """
     return a ** b
 
 def divide(a,b):
     """
-    Divides the first number by the second number.
+    Divise le premier nombre par le deuxième nombre.
     
-    :param a(float): First operand
-    :param b(float): Second operand
+    :param a(float): Première opérande
+    :param b(float): Deuxième opérande
 
     Returns:
-        float: The result of the division
+        float: Le résultat de la division
     """
     return a // b
