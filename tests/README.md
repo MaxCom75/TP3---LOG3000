@@ -11,6 +11,11 @@ Il est responsable de :
 
 Ce module ne contient aucune logique de calcul ; il teste uniquement le code de l’application.
 
+### Exécuter les tests
+Vous aller devoir exécuter la commande suivant depuis la racine du projet
+
+    python -m pytest
+
 ## Fichiers principaux et leurs responsabilités
 
 ### test_app.py
@@ -32,6 +37,6 @@ Compatible avec les navigateurs modernes supportant :
     - pytest
 
 ### Hypothèses
-    - Les tests doivent être exécutés depuis la racine du projet où se trouve app.py
+    - Les tests doivent être exécutés depuis la racine du projet
     - Les fichiers HTML et CSS sont présents mais ne sont pas testés ici
     - Le module tests dépend de app.py
