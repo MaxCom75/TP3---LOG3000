@@ -32,7 +32,7 @@ def subtract(a,b):
     Returns:
         float: Le résultat de la soustraction
     """
-    return b - a
+    return a - b
 
 def multiply(a,b):
     """
